@@ -99,9 +99,17 @@ module.exports = (on, config) => {
       const networkChanged = await metamask.changeNetwork(network);
       return networkChanged;
     },
+    disconnectMetamask: async () => {
+      const disconnect = await metamask.disconnect();
+      return disconnect
+    },
     acceptMetamaskAccess: async () => {
       const accepted = await metamask.acceptAccess();
       return accepted;
+    },
+    rejectMetamaskAccess: async () => {
+      const rejected = await metamask.rejectAccess();
+      return rejected;
     },
     confirmMetamaskTransaction: async () => {
       const confirmed = await metamask.confirmTransaction();

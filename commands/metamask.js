@@ -79,7 +79,7 @@ module.exports = {
     }
     return true;
   },
-  changeNetwork: async network => {
+  changeNetwork: async (network='mainnet') => {
     setNetwork(network);
     await puppeteer.waitAndClick(mainPageElements.networkSwitcher.button);
     if (network === 'main' || network === 'mainnet') {
@@ -178,8 +178,16 @@ module.exports = {
     await puppeteer.waitForText(
       mainPageElements.networkSwitcher.networkName,
       network.networkName,
-    );
-    return true;
+      );
+      return true;
+    },
+  disconnect: async () => {
+    await puppeteer.switchToMetamaskWindow();
+    await puppeteer.waitAndClick(mainPageElements.options.button);
+    await puppeteer.waitAndClick(mainPageElements.options.connectedSites);
+    await puppeteer.waitAndClick(mainPageElements.options.disconnectSite);
+    await puppeteer.waitAndClick(mainPageElements.options.disconnectConfirm);
+    return true
   },
   acceptAccess: async () => {
     await puppeteer.metamaskWindow().waitForTimeout(3000);
@@ -190,6 +198,20 @@ module.exports = {
     );
     await puppeteer.waitAndClick(
       permissionsPageElements.connectButton,
+      notificationPage,
+    );
+    await puppeteer.metamaskWindow().waitForTimeout(3000);
+    return true;
+  },
+  rejectAccess: async () => {
+    await puppeteer.metamaskWindow().waitForTimeout(3000);
+    const notificationPage = await puppeteer.switchToMetamaskNotification();
+    await puppeteer.waitAndClick(
+      notificationPageElements.nextButton,
+      notificationPage,
+    );
+    await puppeteer.waitAndClick(
+      permissionsPageElements.cancelButton,
       notificationPage,
     );
     await puppeteer.metamaskWindow().waitForTimeout(3000);
