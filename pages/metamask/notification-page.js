@@ -23,6 +23,7 @@ module.exports.notificationPageElements = {
 module.exports.permissionsPageElements = {
   permissionsPage,
   connectButton,
+  cancelButton
 };
 
 module.exports.confirmPageElements = {
