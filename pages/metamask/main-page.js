@@ -39,7 +39,7 @@ const options = {
   accountDetailsButton: '[data-testid="account-options-menu__account-details"]',
   connectedSites: '[data-testid="account-options-menu__connected-sites"]',
   disconnectSite: '.connected-sites-list__trash',
-  disconnectConfirm: '.btn-primary'
+  disconnectConfirm: '.btn-primary',
 };
 
 const accountModal = {
@@ -47,16 +47,14 @@ const accountModal = {
   closeButton: '.account-modal__close',
 };
 
-module.exports = {
-  mainPageElements: {
-    networkSwitcher,
-    walletOverview,
-    popup,
-    accountMenu,
-    settingsPage,
-    networksPage,
-    addNetworkPage,
-    options,
-    accountModal,
-  }
-}
+module.exports.mainPageElements = {
+  networkSwitcher,
+  walletOverview,
+  popup,
+  accountMenu,
+  settingsPage,
+  networksPage,
+  addNetworkPage,
+  options,
+  accountModal,
+};

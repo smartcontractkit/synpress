@@ -51,4 +51,4 @@ module.exports = {
     revealSeedPage,
     remindLaterButton,
   },
-}
+};

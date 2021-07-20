@@ -79,7 +79,7 @@ module.exports = {
     }
     return true;
   },
-  changeNetwork: async network => {
+  changeNetwork: async (network='mainnet') => {
     setNetwork(network);
     await puppeteer.waitAndClick(mainPageElements.networkSwitcher.button);
     if (network === 'main' || network === 'mainnet') {

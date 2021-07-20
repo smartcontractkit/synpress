@@ -8,7 +8,7 @@ const fixturesFolder = `${helpers.getSynpressPath()}/fixtures`;
 const pluginsFile = `${helpers.getSynpressPath()}/plugins`;
 const supportFile = `${helpers.getSynpressPath()}/support`;
 
-const defaultConfig = `fixturesFolder=${fixturesFolder},pluginsFile=${pluginsFile},supportFile=${supportFile}`;
+const defaultConfig = `pluginsFile=${pluginsFile},supportFile=${supportFile}`;
 
 const defaultArguments = [
   'cypress',
