@@ -4,7 +4,6 @@ const synpressConfigPath = `${helpers.getSynpressPath()}/synpress.json`;
 
 process.env.CYPRESS_REMOTE_DEBUGGING_PORT = 9222;
 
-const fixturesFolder = `${helpers.getSynpressPath()}/fixtures`;
 const pluginsFile = `${helpers.getSynpressPath()}/plugins`;
 const supportFile = `${helpers.getSynpressPath()}/support`;
 
