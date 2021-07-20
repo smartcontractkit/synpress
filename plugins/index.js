@@ -101,7 +101,15 @@ module.exports = (on, config) => {
     },
     disconnectMetamask: async () => {
       const disconnect = await metamask.disconnect();
-      return disconnect
+      return disconnect;
+    },
+    confirmMetamaskPermissionToSpend: async () => {
+      const confirmed = await metamask.confirmPermissionToSpend();
+      return confirmed;
+    },
+    rejectMetamaskPermissionToSpend: async () => {
+      const rejected = await metamask.rejectPermissionToSpend();
+      return rejected;
     },
     acceptMetamaskAccess: async () => {
       const accepted = await metamask.acceptAccess();
